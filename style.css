@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-base: #afb6c2;
+    --text-title: #d4ccb6;
+    --text-button: #473404;
+    --background: #191816;
+    --form-background: #24221f;
+    --primary-color: #ffc632;
+    --secundary-color: #868686;
+    --ff-poppins: 'Poppins', sans-serif;
+    --ff-roboto: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: var(--background);
+    color: var(--text-base);
+    font-family: var(--ff-poppins);
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 30px 0px;
+}
+.login{
+    display: flex;
+    gap: 10px;
+    color: var(--text-title);
+}
+
+.data{
+    display: grid;
+}
+
+.dataInput{
+    border: solid 1px var(--secundary-color);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 12px;
+}
+
+.dataInput:focus-within{
+    outline: none;
+    border: solid 1px var(--primary-color);
+    box-shadow: 0px 0px 0px 2px #FFDE88;
+}
+
+.dataInput input{
+    width: 100%;
+    background: none;
+    border: none;
+    margin-left: 5px;
+    color: var(--text-base);
+    font-family: var(--ff-roboto);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+.dataInput input:focus{outline: none;}
+
+.dataInput input:-webkit-autofill{
+    -webkit-text-fill-color: var(--text-base);
+    box-shadow: 0 0 0px 1000px var(--background) inset;
+}
+
+.focus{display: none;}
+
+.line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container input{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.container{
+    cursor: pointer;
+    font-family: var(--ff-roboto);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+.container span:last-child{padding-left: 25px;}
+
+.checkmark {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border: solid 1px var(--secundary-color);
+    border-radius: 4px;
+}
+.checkmark img{display: none;}
+
+.container input:checked ~ .checkmark {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.container input:checked ~ .checkmark:after{
+    display: block;
+}
+
+.container input:checked ~ .checkmark img{
+    display: block;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.in{
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--text-button);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.in:hover{
+    cursor: pointer;
+    background-color: #ffc532e3;
+}
+
+.contrast{
+    width: fit-content;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    font-family: var(--ff-poppins);
+}
+
+.pointer:hover{
+    cursor: pointer;
+}
+
+.aside{display: none;}
+
+@media only screen and (min-width: 1382px){
+    
+    body{
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-areas: 
+        "header aside"
+        "main aside";
+        grid-template-rows: auto 1fr;
+        grid-template-columns: 50% 50%;
+
+    }
+    header{
+        grid-area: header;
+        margin: 40px 0px 0px 40px;
+    }
+    main{
+        grid-area: main;
+        background-color: var(--form-background);
+        height: fit-content;
+        width: fit-content;
+        align-self: center;
+        justify-self: center;
+        padding: 55px 119px;
+    }
+    .info{padding-top: 0;}
+
+    .dataInput input:-webkit-autofill {
+        box-shadow: 0 0 0px 1000px var(--form-background) inset;
+    }
+
+    .aside{
+        grid-area: aside;
+        display: block;
+        height: 100vh;
+        width: 100%;
+        object-fit: cover;
+    }
+}

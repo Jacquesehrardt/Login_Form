@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <title>Login Form CSS</title>
+</head>
+<body>
+    <header>
+        <img src="./images/logo.svg" alt="Logo">
+    </header>
+    <main>
+        <div class="info">
+            <div class="login">
+                <img src="./images/log-in.svg" alt="">
+                <h1>Faça seu login</h1>
+            </div>
+            <p>Entre com suas informações de cadastro</p>
+        </div>
+        
+        <form class="data">
+            <label for="email">E-mail</label>
+            <div class="dataInput">
+                <img src="./images/mail.svg" alt="" class="iconMail ">
+                <img src="./images/mail-focus.svg" alt=""  class="iconMail focus">
+                <input id="email" type="email" placeholder="Digite seu e-mail">
+            </div>
+            <label for="password">Senha</label>
+            <div class="dataInput">
+                <img src="./images/lock.svg" alt="" class="iconLock">
+                <img src="./images/lock-focus.svg" alt=""  class="iconLock focus">
+                <input id="password" type="password" placeholder="Digite sua senha">
+                <img src="./images/eye.svg" alt="">
+            </div>
+            
+        </form>
+
+        <div class="line">
+            <label class="container">
+                <input type="checkbox" id="checkbox">
+                <span class="checkmark">
+                    <img src="./images/check.svg" alt="">
+                </span>
+                <span>Lembre-me</span>
+            </label>
+            <button class="contrast pointer"><strong>Esqueci minha senha</strong></button>
+        </div>
+        <div class="flex">
+            <button class="in">Entrar</button>
+            <span class="contrast">Não tem uma conta?<button class="contrast pointer"><strong>Registre-se</strong></strong></span>    
+        </div>
+    </main>
+    <img class="aside" src="./images/side-image.jpg" alt="">
+    <script src="./script.js"></script>
+</body>
+</html>
